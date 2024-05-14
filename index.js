@@ -1,3 +1,4 @@
+
 const add = function (a, b) {
   return a + b;
 };
@@ -11,7 +12,11 @@ const multiply = function (a, b) {
 };
 
 const divide = function (a, b) {
+    if (b == 0){
+        return "ERROR";
+    } else {
   return a / b;
+    }
 };
 
 let firstNum;
@@ -27,9 +32,9 @@ const delBtn = document.querySelector("#del-button");
 const decBtn = document.querySelector("#dec-button");
 
 function operate(operator, firstNum, secondNum) {
-  return operator(Number(firstNum), Number(secondNum));
+  return operator( Number(firstNum), Number(secondNum));
 }
-
+//number buttons
 numBtn.forEach((button) => {
   button.addEventListener("click", () => {
     if (firstNum == null) {
@@ -40,7 +45,7 @@ numBtn.forEach((button) => {
         firstNum += button.textContent;
         inputDisplay.textContent = firstNum;
       } else {
-        inputDisplay.textContent = Number(firstNum).toExponential(4);
+        inputDisplay.textContent = firstNum.toPrecision(6);
       }
     } else if (secondNum == null) {
       secondNum = button.textContent;
@@ -50,12 +55,16 @@ numBtn.forEach((button) => {
         secondNum += button.textContent;
         inputDisplay.textContent = secondNum;
       } else {
-        inputDisplay.textContent = Number(secondNum).toExponential(4);
+        inputDisplay.textContent = secondNum.toPrecision(6);
       }
-    }
+    };
+    if ((inputDisplay.textContent.includes('.'))){
+        decBtn.disabled = true;
+ } else { decBtn.disabled = false };
   });
 });
 
+//operator buttons 
 opBtn.forEach((button) => {
   button.addEventListener("click", () => {
     if (operator == null) {
@@ -69,11 +78,12 @@ opBtn.forEach((button) => {
         operator = divide;
       }
     } else {
-        let result = operate(operator, firstNum, secondNum);
-        if (result.toString().split("").length < 13) {
+        // if a second operator button is pressed, operate with result as new firstNum
+        let result = operate(operator, firstNum, secondNum); 
+        if (result.toString().split("").length < 11) {
           inputDisplay.textContent = result;
         } else {
-          inputDisplay.textContent = result.toExponential(4);
+          inputDisplay.textContent = result.toPrecision(6);
         }
         firstNum = result;
         secondNum = null;
@@ -91,6 +101,7 @@ opBtn.forEach((button) => {
   });
 });
 
+//clear button
 const clearBtn = document.querySelector("#clear");
 clearBtn.addEventListener("click", () => {
   inputDisplay.textContent = "";
@@ -99,18 +110,20 @@ clearBtn.addEventListener("click", () => {
   operator = null;
 });
 
+//equal button
 equalBtn.addEventListener("click", () => {
   let result = operate(operator, firstNum, secondNum);
-  if (result.toString().split("").length < 13) {
+  if (result.toString().split("").length < 11) {
     inputDisplay.textContent = result;
   } else {
-    inputDisplay.textContent = result.toExponential(4);
+    inputDisplay.textContent = result.toPrecision(6);
   }
   firstNum = result;
   secondNum = null;
   operator = null;
 });
 
+//delete button
 delBtn.addEventListener("click", () => {
   if (firstNum !== null && operator == null) {
     let updateNum = firstNum.toString().slice(0, -1);
@@ -122,3 +135,5 @@ delBtn.addEventListener("click", () => {
     inputDisplay.textContent = secondNum;
   }
 });
+
+

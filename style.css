@@ -1,6 +1,7 @@
+
 @font-face {
-    font-family: 'Lato';
-    src: url('Lato-Regular.ttf');
+    font-family: 'Questrial';
+    src: url('Questrial-Regular.ttf');
 }
 
 @font-face {
@@ -8,16 +9,17 @@
     src: url('Kanit-Regular.ttf');
 }
 
+html {
+    background-image: url("milad-fakurian-GJKx5lhwU3M-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
 
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(223, 221, 238);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 #calculator {
@@ -30,8 +32,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #display {
@@ -44,7 +48,6 @@ body {
     margin-bottom: 0px;
     height: 120px;
     width: 300px;
-    font-family: 'Lato';
     border-radius: 15px;
     color: white;
     font-size: 50px;
@@ -55,6 +58,8 @@ body {
 .row {
     display: flex;
     flex-direction: row;
+
+    
 }
 
 button {
@@ -66,7 +71,7 @@ button {
     color: white;
     font-size: 20px;
     border: 1px solid black ;
-    font-family: 'Lato';
+    font-family: 'Questrial';
     border-radius: 3px;
 }
 
@@ -75,23 +80,28 @@ button:hover {
 }
 
 #del-button {
-    color: white;
+    color: rgb(235, 250, 122);
 }
 
 #eq-button {
-    background-color: rgb(227, 224, 219);
+    background-color: rgb(10, 202, 122);
+    color: white;
     width: 180px;
     border-radius: 3px 3px 15px 3px;
-    color: black;
+    font-size: 20px;
 }
 
 #clear {
-    background-color: rgb(71, 112, 95);
-    color: white;
+    background-color: rgb(227, 224, 219);
+    color: rgb(251, 30, 170);
     width: 180px;
     border-radius: 3px 3px 3px 15px;
+    font-family: 'Questrial';
+    font-size: 20px;
 }
 
 .op-button {
     background-color: rgb(120 120 120);
+    color: rgb(10, 202, 122);
+    font-size: 20px;
 }
