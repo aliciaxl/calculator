@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-Regular.ttf');
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(223, 221, 238);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#calculator {
+    background-color: rgb(11, 10, 10);
+    height: 460px;
+    width: 360px;
+    padding: 0px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+#display {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    background-color: black;
+    padding:10px;
+    margin-bottom: 0px;
+    height: 120px;
+    width: 300px;
+    font-family: 'Lato';
+    border-radius: 15px;
+    color: white;
+    font-size: 50px;
+    font-family: 'Kanit';
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    height: 64px;
+    width: 90px;
+    text-align: center;
+    background-color: rgb(75 75 75);
+    border-radius: 2px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid black ;
+    font-family: 'Lato';
+    border-radius: 3px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#del-button {
+    color: white;
+}
+
+#eq-button {
+    background-color: rgb(227, 224, 219);
+    width: 180px;
+    border-radius: 3px 3px 15px 3px;
+    color: black;
+}
+
+#clear {
+    background-color: rgb(71, 112, 95);
+    color: white;
+    width: 180px;
+    border-radius: 3px 3px 3px 15px;
+}
+
+.op-button {
+    background-color: rgb(120 120 120);
+}
