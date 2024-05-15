@@ -83,12 +83,12 @@ button:hover {
 }
 
 #del-button {
-    /* color: rgb(235, 250, 122); */
     color: rgb(230, 174, 248);
+    font-size: 20px;
+
 }
 
 #eq-button {
-    /* background-color: rgb(95, 169, 125); */
     background-color: rgb(10, 202, 122);
     color: white;
     width: 180px;

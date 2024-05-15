@@ -127,12 +127,13 @@ equalBtn.addEventListener("click", () => {
 delBtn.addEventListener("click", () => {
   if (firstNum !== null && operator == null) {
     let updateNum = firstNum.toString().slice(0, -1);
-    firstNum = parseInt(updateNum);
+    firstNum = updateNum;
     inputDisplay.textContent = firstNum;
   } else if (secondNum !== null && operator !== null) {
     let updateSecondNum = secondNum.toString().slice(0, -1);
-    secondNum = parseInt(updateSecondNum);
+    secondNum = updateSecondNum;
     inputDisplay.textContent = secondNum;
+  } else { inputDisplay.textContent = null;
   }
 });
 
